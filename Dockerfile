@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS publish
 WORKDIR /src
 COPY ["TournamentAssistantCore/TournamentAssistantCore.csproj", "TournamentAssistantCore/"]
 RUN dotnet restore "TournamentAssistantCore/TournamentAssistantCore.csproj"
-COPY . .
+COPY TournamentAssistantCore .
 WORKDIR "/src/TournamentAssistantCore"
 RUN dotnet publish "TournamentAssistantCore.csproj" -c Release -o /app/publish
 
