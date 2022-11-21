@@ -11,8 +11,9 @@ COPY TournamentAssistantShared TournamentAssistantShared
 COPY TournamentAssistantProtos TournamentAssistantProtos
 COPY TournamentAssistantCore TournamentAssistantCore
 
-RUN dotnet restore "TournamentAssistantCore/TournamentAssistantCore.csproj"
-RUN dotnet publish "TournamentAssistantCore/TournamentAssistantCore.csproj" -c Release -o /app/publish
+WORKDIR /TournamentAssistantCore
+
+RUN dotnet publish "TournamentAssistantCore.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
