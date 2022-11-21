@@ -3,7 +3,7 @@
 FROM mcr.microsoft.com/dotnet/runtime:3.1.30-focal AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS publish
+FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy AS publish
 
 WORKDIR /src
 
